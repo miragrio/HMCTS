@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "aiomysql>=0.3.2",
+    "cryptography>=41.0.0",
     "fastapi>=0.123.5",
+    "pymysql>=1.1.0",
     "sqlalchemy>=2.0.44",
     "uvicorn>=0.38.0",
 ]
