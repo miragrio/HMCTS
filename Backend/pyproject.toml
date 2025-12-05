@@ -1,0 +1,12 @@
+[project]
+name = "HMCTS_Project_Backend"
+version = "0.1.0"
+description = "API for creating tasks using MySQL and Python FastAPI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiomysql>=0.3.2",
+    "fastapi>=0.123.5",
+    "sqlalchemy>=2.0.44",
+    "uvicorn>=0.38.0",
+]
