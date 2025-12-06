@@ -1,93 +1,748 @@
+/* UK Government Design System Styling */
+
+/* Root Container */
 #root {
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  text-align: left;
+  background-color: #FFFFFF;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Header Styles - UK Government Standard */
+.top-header {
+  background-color: #0B0C0C;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid #505A5F;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header-logo {
+  height: 50px;
+  background-color: white;
+  padding: 2px 8px;
+  border-radius: 2px;
+  object-fit: contain;
 }
 
-.card {
-  padding: 2em;
+/* Main content wrapper to account for fixed header */
+.app-container {
+  padding-top: 60px;
+  background-color: #F3F2F1;
+  min-height: 100vh;
 }
 
-.read-the-docs {
-  color: #888;
+/* Page Content */
+.app-container > h1 {
+  background-color: #FFFFFF;
+  padding: 2rem 1.5rem;
+  margin: 0;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid #B1B4B6;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-/* Form Styles */
+/* Form Styles - UK Government Design System */
 form {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem 1.5rem;
+  background: #FFFFFF;
+  border-bottom: 1px solid #B1B4B6;
+}
+
+/* Form Labels */
+form label {
+  display: block;
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.31579;
+  color: #0B0C0C;
+  margin-bottom: 0.5rem;
+}
+
+/* Deadline Inputs Wrapper */
+.deadline-inputs-wrapper {
+  display: flex;
   gap: 1rem;
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #f5f5f5;
-  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
 
-form input,
-form select,
-form button {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
+/* Date Input Wrapper */
+.date-input-wrapper {
+  position: relative;
+  display: block;
+  flex: 1;
+  min-width: 0;
 }
 
-form button {
-  background: #646cff;
-  color: white;
+/* Time Input Wrapper */
+.time-input-wrapper {
+  position: relative;
+  display: block;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.time-input-wrapper {
+  position: relative;
+}
+
+.time-input-wrapper input[type="time"] {
+  width: 100%;
+  padding: 0.5rem;
+  padding-right: 3.5rem;
+  border: 2px solid #0B0C0C;
+  border-radius: 0;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #0B0C0C;
+  box-sizing: border-box;
+  min-height: 44px;
+  height: auto;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Time Picker Button */
+.time-picker-button {
+  position: absolute;
+  right: 4px;
+  top: calc(50% - 4px);
+  transform: translateY(-50%);
+  background: transparent;
   border: none;
+  border-radius: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
   cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s;
+  color: #0B0C0C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 10;
+  box-sizing: border-box;
 }
 
-form button:hover {
-  background: #535bf2;
+.time-picker-button:hover {
+  background-color: #F3F2F1;
+  border-radius: 0;
 }
 
-/* Modal Styles */
+.time-picker-button:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+.time-input-wrapper input[type="time"]:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+.time-input-wrapper input[type="time"]:hover {
+  border-color: #505A5F;
+}
+
+/* Hide native time input clock icon */
+.time-input-wrapper input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.time-input-wrapper input[type="time"]::-webkit-inner-spin-button,
+.time-input-wrapper input[type="time"]::-webkit-clear-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Time Picker Popup */
+.time-picker-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  background: #FFFFFF;
+  border: 2px solid #0B0C0C;
+  z-index: 200;
+  min-width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.time-picker-header {
+  padding: 1rem;
+  background-color: #F3F2F1;
+  border-bottom: 1px solid #B1B4B6;
+}
+
+.time-picker-title {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: #0B0C0C;
+  text-align: center;
+}
+
+.time-picker-body {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+}
+
+.time-picker-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-picker-label {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #0B0C0C;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.time-picker-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  border: 2px solid #0B0C0C;
+  background-color: #FFFFFF;
+}
+
+.time-picker-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.time-picker-scroll::-webkit-scrollbar-track {
+  background: #F3F2F1;
+}
+
+.time-picker-scroll::-webkit-scrollbar-thumb {
+  background: #B1B4B6;
+  border: 1px solid #0B0C0C;
+}
+
+.time-picker-scroll::-webkit-scrollbar-thumb:hover {
+  background: #505A5F;
+}
+
+.time-picker-option {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-bottom: 1px solid #E8E8E8;
+  background: #FFFFFF;
+  color: #0B0C0C;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.2s;
+}
+
+.time-picker-option:hover {
+  background-color: #F3F2F1;
+}
+
+.time-picker-option:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: -2px;
+  z-index: 1;
+  position: relative;
+}
+
+.time-picker-option.selected {
+  background-color: #1D70B8;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.time-picker-separator {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0B0C0C;
+  padding-top: 2rem;
+  line-height: 1;
+}
+
+.time-picker-footer {
+  padding: 1rem;
+  border-top: 1px solid #B1B4B6;
+  background-color: #F3F2F1;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.time-picker-today-button,
+.time-picker-confirm-button {
+  flex: 1;
+  background: #1D70B8;
+  color: #FFFFFF;
+  border: 2px solid #1D70B8;
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: Arial, sans-serif;
+}
+
+.time-picker-today-button:hover,
+.time-picker-confirm-button:hover {
+  background-color: #003078;
+  border-color: #003078;
+}
+
+.time-picker-today-button:focus,
+.time-picker-confirm-button:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+.time-picker-today-button {
+  background: #F3F2F1;
+  color: #0B0C0C;
+  border-color: #0B0C0C;
+}
+
+.time-picker-today-button:hover {
+  background-color: #E8E8E8;
+  border-color: #505A5F;
+}
+
+@media (max-width: 640px) {
+  .deadline-inputs-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .time-input-wrapper {
+    width: 100%;
+  }
+
+  .time-picker-popup {
+    min-width: 100%;
+    left: 0;
+  }
+}
+
+.date-input-wrapper input[type="date"] {
+  width: 100%;
+  padding-right: 3.5rem;
+  box-sizing: border-box;
+  min-height: 44px;
+  height: auto;
+}
+
+/* Hide native date input calendar icon on all browsers */
+.date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.date-input-wrapper input[type="date"]::-webkit-inner-spin-button,
+.date-input-wrapper input[type="date"]::-webkit-clear-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.date-input-wrapper input[type="date"]::-moz-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide calendar icon in Edge/IE */
+.date-input-wrapper input[type="date"]::-ms-clear,
+.date-input-wrapper input[type="date"]::-ms-reveal {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.date-input-wrapper input[type="date"]::-ms-expand {
+  display: none !important;
+}
+
+
+/* Calendar Button */
+.calendar-button {
+  position: absolute;
+  right: 4px;
+  top: calc(50% - 4px);
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  color: #0B0C0C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.calendar-button:hover {
+  background-color: #F3F2F1;
+  border-radius: 0;
+}
+
+.calendar-button:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+/* Calendar Popup */
+.calendar-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  background: #FFFFFF;
+  border: 2px solid #0B0C0C;
+  z-index: 200;
+  min-width: 300px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #F3F2F1;
+  border-bottom: 1px solid #B1B4B6;
+}
+
+.calendar-nav-button {
+  background: #1D70B8;
+  color: #FFFFFF;
+  border: 2px solid #1D70B8;
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 1;
+  min-width: 44px;
+  height: 44px;
+}
+
+.calendar-nav-button:hover {
+  background-color: #003078;
+  border-color: #003078;
+}
+
+.calendar-nav-button:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+.calendar-month-year {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: #0B0C0C;
+  text-align: center;
+  flex: 1;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #F3F2F1;
+  border-bottom: 1px solid #B1B4B6;
+}
+
+.calendar-weekday {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #0B0C0C;
+  border-right: 1px solid #B1B4B6;
+}
+
+.calendar-weekday:last-child {
+  border-right: none;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  padding: 0.5rem;
+}
+
+.calendar-day {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 0;
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #0B0C0C;
+  cursor: pointer;
+  text-align: center;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-day:not(.empty):hover {
+  background-color: #F3F2F1;
+  border-color: #1D70B8;
+}
+
+.calendar-day:not(.empty):focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: -2px;
+  z-index: 1;
+  position: relative;
+}
+
+.calendar-day.selected {
+  background-color: #1D70B8;
+  color: #FFFFFF;
+  border-color: #1D70B8;
+  font-weight: 700;
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+  border: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.calendar-day.today {
+  border: 2px solid #1D70B8;
+  font-weight: 700;
+}
+
+.calendar-day.today:not(.selected) {
+  background-color: #F3F2F1;
+}
+
+.calendar-footer {
+  padding: 0.75rem;
+  border-top: 1px solid #B1B4B6;
+  background-color: #F3F2F1;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-today-button {
+  background: #1D70B8;
+  color: #FFFFFF;
+  border: 2px solid #1D70B8;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-today-button:hover {
+  background-color: #003078;
+  border-color: #003078;
+}
+
+.calendar-today-button:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+/* Form Inputs - UK Government Style */
+form input[type="text"],
+form input[type="date"],
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #0B0C0C;
+  border-radius: 0;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #0B0C0C;
+  margin-bottom: 0.5rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form select:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+form input[type="text"]:hover,
+form input[type="date"]:hover,
+form select:hover {
+  border-color: #505A5F;
+}
+
+/* Placeholder styling */
+form input::placeholder {
+  color: #505A5F;
+  opacity: 1;
+}
+
+/* Select dropdown styling */
+form select {
+  position: relative;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='40' height='40'%3E%3Cpath fill='%230B0C0C' d='M0 0h80v80H0z'/%3E%3Cpath fill='%23FFFFFF' d='M20 30l20 20 20-20z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right -2px center;
+  background-size: 44px 100%;
+  padding-right: 3.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  min-height: 44px;
+  height: auto;
+}
+
+/* Button Styles - UK Government Primary Button */
+form button[type="submit"],
+.modal-footer button {
+  background-color: #1D70B8;
+  color: #FFFFFF;
+  border: 2px solid #1D70B8;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+form button[type="submit"]:hover,
+.modal-footer button:hover {
+  background-color: #003078;
+  border-color: #003078;
+}
+
+form button[type="submit"]:focus,
+.modal-footer button:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
+}
+
+form button[type="submit"]:active,
+.modal-footer button:active {
+  background-color: #003078;
+  border-color: #003078;
+  top: 2px;
+  position: relative;
+}
+
+/* Modal Styles - UK Government Design */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(11, 12, 12, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   animation: fadeIn 0.2s ease-in;
+  padding: 1rem;
 }
 
 @keyframes fadeIn {
@@ -100,10 +755,10 @@ form button:hover {
 }
 
 .modal-content {
-  background: white;
-  border-radius: 12px;
+  background: #FFFFFF;
+  border: 2px solid #0B0C0C;
   max-width: 600px;
-  width: 90%;
+  width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -126,112 +781,171 @@ form button:hover {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #B1B4B6;
+  background-color: #F3F2F1;
 }
 
 .modal-header h2 {
   margin: 0;
-  color: #333;
+  color: #0B0C0C;
   font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .modal-close {
   background: none;
-  border: none;
-  font-size: 2rem;
-  color: #666;
+  border: 2px solid #0B0C0C;
+  border-radius: 0;
+  font-size: 1.5rem;
+  color: #0B0C0C;
   cursor: pointer;
   padding: 0;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  transition: background 0.2s;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .modal-close:hover {
-  background: #f0f0f0;
-  color: #333;
+  background-color: #F3F2F1;
+  border-color: #505A5F;
+}
+
+.modal-close:focus {
+  outline: 3px solid #FFDD00;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px;
 }
 
 .modal-body {
   padding: 1.5rem;
+  background-color: #FFFFFF;
 }
 
 .task-detail {
   margin-bottom: 1.5rem;
   text-align: left;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.task-detail:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .task-detail label {
   display: block;
-  font-weight: 600;
-  color: #555;
+  font-weight: 700;
+  color: #0B0C0C;
   margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+  line-height: 1.31579;
 }
 
 .task-detail p {
   margin: 0;
-  color: #333;
-  font-size: 1rem;
-  padding: 0.5rem;
-  background: #f9f9f9;
-  border-radius: 4px;
+  color: #0B0C0C;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  padding: 0.75rem;
+  background: #F3F2F1;
+  border-left: 4px solid #1D70B8;
+  margin-top: 0.5rem;
 }
 
 .task-id {
-  font-family: monospace;
-  font-size: 0.9rem;
-  color: #666;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: #505A5F;
 }
 
+/* Status Badge Styles - UK Government Colours */
 .status-badge {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-weight: 500;
+  border-radius: 0;
+  font-weight: 700;
   text-transform: capitalize;
+  font-size: 1rem;
+  line-height: 1.25;
+  border: 2px solid;
 }
 
 .status-pending {
-  background: #fff3cd;
-  color: #856404;
+  background: #FFDD00;
+  color: #0B0C0C;
+  border-color: #0B0C0C;
 }
 
 .status-in_progress {
-  background: #cfe2ff;
-  color: #084298;
+  background: #1D70B8;
+  color: #FFFFFF;
+  border-color: #1D70B8;
 }
 
 .status-completed {
-  background: #d1e7dd;
-  color: #0f5132;
+  background: #00703C;
+  color: #FFFFFF;
+  border-color: #00703C;
 }
 
 .modal-footer {
   padding: 1rem 1.5rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #B1B4B6;
   display: flex;
   justify-content: flex-end;
+  background-color: #F3F2F1;
 }
 
 .modal-footer button {
-  padding: 0.75rem 2rem;
-  background: #646cff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background 0.3s;
+  margin-top: 0;
 }
 
-.modal-footer button:hover {
-  background: #535bf2;
+/* Responsive Design */
+@media (max-width: 640px) {
+  .app-container > h1 {
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  form {
+    padding: 1.5rem 1rem;
+  }
+
+  .modal-content {
+    margin: 1rem;
+    max-height: 85vh;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 1rem;
+  }
+}
+
+/* Remove default Vite styles */
+.logo {
+  display: none;
+}
+
+.card {
+  display: none;
+}
+
+.read-the-docs {
+  display: none;
+}
+
+/* Remove body padding as we handle it in app-container */
+body {
+  padding-top: 0;
 }
