@@ -98,10 +98,6 @@ form label {
   flex-shrink: 0;
 }
 
-.time-input-wrapper {
-  position: relative;
-}
-
 .time-input-wrapper input[type="time"] {
   width: 100%;
   padding: 0.5rem;
@@ -425,7 +421,6 @@ form label {
 .date-input-wrapper input[type="date"]::-ms-expand {
   display: none !important;
 }
-
 
 /* Calendar Button */
 .calendar-button {
@@ -932,20 +927,3 @@ form button[type="submit"]:active,
   }
 }
 
-/* Remove default Vite styles */
-.logo {
-  display: none;
-}
-
-.card {
-  display: none;
-}
-
-.read-the-docs {
-  display: none;
-}
-
-/* Remove body padding as we handle it in app-container */
-body {
-  padding-top: 0;
-}
