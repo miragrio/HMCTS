@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
 from .schemas import Task as TaskSchema
@@ -8,6 +8,6 @@ from .database import get_db
 
 router = APIRouter()
 
-@router.post("/", response_model=TaskSchema)
+@router.post("/", response_model=TaskSchema, status_code=status.HTTP_201_CREATED)
 def create_task_endpoint(task: TaskCreate, db: Session = Depends(get_db)):
     return create_task(db, task)
