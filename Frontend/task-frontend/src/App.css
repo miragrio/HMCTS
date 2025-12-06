@@ -1,6 +1,9 @@
-/* UK Government Design System Styling */
+/* ============================================
+   Application Styles - UK Government Design System
+   ============================================ */
 
-/* Root Container */
+/* Root Container
+   Main application container with max-width constraint */
 #root {
   max-width: 960px;
   margin: 0 auto;
@@ -10,7 +13,11 @@
   min-height: 100vh;
 }
 
-/* Header Styles - UK Government Standard */
+/* ============================================
+   Header Section
+   ============================================ */
+
+/* Top Header - Fixed black header bar with logo */
 .top-header {
   background-color: #0B0C0C;
   width: 100%;
@@ -26,6 +33,7 @@
   border-bottom: 1px solid #505A5F;
 }
 
+/* Header Logo - White background for logo visibility */
 .header-logo {
   height: 50px;
   background-color: white;
@@ -34,14 +42,18 @@
   object-fit: contain;
 }
 
-/* Main content wrapper to account for fixed header */
+/* ============================================
+   Main Content Area
+   ============================================ */
+
+/* Main content wrapper - Accounts for fixed header height */
 .app-container {
   padding-top: 60px;
   background-color: #F3F2F1;
   min-height: 100vh;
 }
 
-/* Page Content */
+/* Page Title - Main heading with white background */
 .app-container > h1 {
   background-color: #FFFFFF;
   padding: 2rem 1.5rem;
@@ -52,7 +64,11 @@
   font-weight: 700;
 }
 
-/* Form Styles - UK Government Design System */
+/* ============================================
+   Form Styles
+   ============================================ */
+
+/* Form Container - UK Government Design System compliant */
 form {
   display: flex;
   flex-direction: column;
@@ -74,7 +90,11 @@ form label {
   margin-bottom: 0.5rem;
 }
 
-/* Deadline Inputs Wrapper */
+/* ============================================
+   Deadline Input Fields
+   ============================================ */
+
+/* Deadline Inputs Wrapper - Contains both date and time inputs */
 .deadline-inputs-wrapper {
   display: flex;
   gap: 1rem;
@@ -82,7 +102,7 @@ form label {
   width: 100%;
 }
 
-/* Date Input Wrapper */
+/* Date Input Wrapper - Contains date input and calendar button */
 .date-input-wrapper {
   position: relative;
   display: block;
@@ -90,7 +110,7 @@ form label {
   min-width: 0;
 }
 
-/* Time Input Wrapper */
+/* Time Input Wrapper - Contains time input and time picker button */
 .time-input-wrapper {
   position: relative;
   display: block;
@@ -98,6 +118,7 @@ form label {
   flex-shrink: 0;
 }
 
+/* Time Input Field */
 .time-input-wrapper input[type="time"] {
   width: 100%;
   padding: 0.5rem;
@@ -116,7 +137,7 @@ form label {
   appearance: none;
 }
 
-/* Time Picker Button */
+/* Time Picker Button - Opens time picker popup */
 .time-picker-button {
   position: absolute;
   right: 4px;
@@ -186,7 +207,11 @@ form label {
   height: 0 !important;
 }
 
-/* Time Picker Popup */
+/* ============================================
+   Time Picker Component
+   ============================================ */
+
+/* Time Picker Popup - Modal for selecting time */
 .time-picker-popup {
   position: absolute;
   top: 100%;
@@ -237,6 +262,7 @@ form label {
   letter-spacing: 0.5px;
 }
 
+/* Time Picker Scroll Container - Scrollable list for hours/minutes */
 .time-picker-scroll {
   max-height: 200px;
   overflow-y: auto;
@@ -245,6 +271,7 @@ form label {
   background-color: #FFFFFF;
 }
 
+/* Custom Scrollbar Styling - UK Government Design System */
 .time-picker-scroll::-webkit-scrollbar {
   width: 8px;
 }
@@ -353,7 +380,12 @@ form label {
   border-color: #505A5F;
 }
 
-@media (max-width: 640px) {
+/* ============================================
+   Date Input Field
+   ============================================ */
+
+/* Date Input Field - Styling for date input */
+.date-input-wrapper input[type="date"] {
   .deadline-inputs-wrapper {
     flex-direction: column;
     gap: 0.5rem;
@@ -422,7 +454,11 @@ form label {
   display: none !important;
 }
 
-/* Calendar Button */
+/* ============================================
+   Calendar Component
+   ============================================ */
+
+/* Calendar Button - Opens calendar popup */
 .calendar-button {
   position: absolute;
   right: 4px;
@@ -459,7 +495,7 @@ form label {
   box-shadow: inset 0 0 0 2px;
 }
 
-/* Calendar Popup */
+/* Calendar Popup - Modal for selecting date */
 .calendar-popup {
   position: absolute;
   top: 100%;
@@ -575,6 +611,7 @@ form label {
   position: relative;
 }
 
+/* Calendar Day States */
 .calendar-day.selected {
   background-color: #1D70B8;
   color: #FFFFFF;
@@ -631,7 +668,12 @@ form label {
   box-shadow: inset 0 0 0 2px;
 }
 
-/* Form Inputs - UK Government Style */
+/* ============================================
+   Form Input Fields
+   ============================================ */
+
+/* Form Inputs - UK Government Style
+   Applies to text inputs, date inputs, and select dropdowns */
 form input[type="text"],
 form input[type="date"],
 form select {
@@ -669,7 +711,8 @@ form input::placeholder {
   opacity: 1;
 }
 
-/* Select dropdown styling */
+/* Select Dropdown Styling
+   Custom dropdown arrow positioned at the right edge */
 form select {
   position: relative;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='40' height='40'%3E%3Cpath fill='%230B0C0C' d='M0 0h80v80H0z'/%3E%3Cpath fill='%23FFFFFF' d='M20 30l20 20 20-20z'/%3E%3C/svg%3E");
@@ -683,7 +726,11 @@ form select {
   height: auto;
 }
 
-/* Button Styles - UK Government Primary Button */
+/* ============================================
+   Button Styles
+   ============================================ */
+
+/* Primary Button - UK Government standard blue button */
 form button[type="submit"],
 .modal-footer button {
   background-color: #1D70B8;
@@ -724,7 +771,11 @@ form button[type="submit"]:active,
   position: relative;
 }
 
-/* Modal Styles - UK Government Design */
+/* ============================================
+   Modal Component
+   ============================================ */
+
+/* Modal Overlay - Dark backdrop for modal popup */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -740,6 +791,7 @@ form button[type="submit"]:active,
   padding: 1rem;
 }
 
+/* Modal Animation - Fade in effect */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -749,6 +801,7 @@ form button[type="submit"]:active,
   }
 }
 
+/* Modal Content - White box containing task details */
 .modal-content {
   background: #FFFFFF;
   border: 2px solid #0B0C0C;
@@ -760,6 +813,7 @@ form button[type="submit"]:active,
   animation: slideUp 0.3s ease-out;
 }
 
+/* Modal Animation - Slide up effect */
 @keyframes slideUp {
   from {
     transform: translateY(20px);
@@ -771,6 +825,7 @@ form button[type="submit"]:active,
   }
 }
 
+/* Modal Header - Contains title and close button */
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -818,11 +873,13 @@ form button[type="submit"]:active,
   box-shadow: inset 0 0 0 2px;
 }
 
+/* Modal Body - Contains task details */
 .modal-body {
   padding: 1.5rem;
   background-color: #FFFFFF;
 }
 
+/* Task Detail - Individual task information field */
 .task-detail {
   margin-bottom: 1.5rem;
   text-align: left;
@@ -862,7 +919,11 @@ form button[type="submit"]:active,
   color: #505A5F;
 }
 
-/* Status Badge Styles - UK Government Colours */
+/* ============================================
+   Status Badge Styles
+   ============================================ */
+
+/* Status Badge - Color-coded task status indicators */
 .status-badge {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -904,7 +965,11 @@ form button[type="submit"]:active,
   margin-top: 0;
 }
 
-/* Responsive Design */
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Mobile Styles - Adjustments for screens smaller than 640px */
 @media (max-width: 640px) {
   .app-container > h1 {
     font-size: 1.5rem;
