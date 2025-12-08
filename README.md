@@ -20,20 +20,19 @@ HMCTS/
 │   └── pyproject.toml        # Python dependencies
 │
 └── Frontend/         # React TypeScript frontend application
-    └── task-frontend/
-        ├── src/
-        │   ├── App.tsx       # Main application component
-        │   ├── App.css       # Application styles (UK Government Design System)
-        │   ├── main.tsx      # Application entry point
-        │   ├── index.css     # Global styles
-        │   └── assets/       # Static assets
-        │       └── logo.png  # Application logo
-        ├── public/           # Public static files
-        ├── index.html        # HTML template
-        ├── package.json      # Node.js dependencies
-        ├── tsconfig.json     # TypeScript configuration
-        ├── vite.config.ts    # Vite configuration
-        └── eslint.config.js  # ESLint configuration
+    ├── src/
+    │   ├── App.tsx       # Main application component
+    │   ├── App.css       # Application styles (UK Government Design System)
+    │   ├── main.tsx      # Application entry point
+    │   ├── index.css     # Global styles
+    │   └── assets/       # Static assets
+    │       └── logo.png  # Application logo
+    ├── public/           # Public static files
+    ├── index.html        # HTML template
+    ├── package.json      # Node.js dependencies
+    ├── tsconfig.json     # TypeScript configuration
+    ├── vite.config.ts    # Vite configuration
+    └── eslint.config.js  # ESLint configuration
 ```
 
 ## Technologies
@@ -122,14 +121,14 @@ The server will start on `http://127.0.0.1:8000`
 Navigate to the Frontend directory and install dependencies:
 
 ```bash
-cd Frontend/task-frontend
+cd Frontend
 npm install
 ```
 
 ### 2. Running the Frontend Development Server
 
 ```bash
-cd Frontend/task-frontend
+cd Frontend
 npm run dev
 ```
 
@@ -138,7 +137,7 @@ The frontend will start on `http://localhost:5173` (or another port if 5173 is o
 ### 3. Building for Production
 
 ```bash
-cd Frontend/task-frontend
+cd Frontend
 npm run build
 ```
 
@@ -221,7 +220,7 @@ uv run python src/main.py
 
 **CORS Errors:**
 - Ensure the backend server is running
-- Verify the API URL in `Frontend/task-frontend/src/App.tsx` matches your backend URL
+- Verify the API URL in `Frontend/src/App.tsx` matches your backend URL
 
 **Port Already in Use:**
 - Vite will automatically use the next available port

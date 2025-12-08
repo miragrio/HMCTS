@@ -66,7 +66,7 @@ This frontend application is built with React 19 and TypeScript, providing a mod
 
 1. Navigate to the frontend directory:
    ```bash
-   cd Frontend/task-frontend
+   cd Frontend
    ```
 
 2. Install dependencies:
@@ -96,7 +96,7 @@ The application will be available at `http://localhost:5173` (or another port if
 ## Project Structure
 
 ```
-task-frontend/
+Frontend/
 ├── src/
 │   ├── App.tsx          # Main application component
 │   ├── App.css          # Application styles

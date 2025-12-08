@@ -11,7 +11,7 @@
  * Follows UK Government Design System styling guidelines.
  */
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, startTransition } from 'react'
 import axios from 'axios'
 import './App.css'
 import logo from './assets/logo.png'
@@ -205,13 +205,16 @@ function App() {
     if (form.deadline) {
       const date = new Date(form.deadline);
       if (!isNaN(date.getTime())) {
-        setCalendarDate(date);
-        const dateStr = date.toISOString().split('T')[0];
-        const timeStr = date.toTimeString().slice(0, 5);
-        setDeadlineDate(dateStr);
-        setDeadlineTime(timeStr);
-        setSelectedHour(date.getHours());
-        setSelectedMinute(date.getMinutes());
+        // Batch state updates to avoid cascading renders
+        startTransition(() => {
+          setCalendarDate(date);
+          const dateStr = date.toISOString().split('T')[0];
+          const timeStr = date.toTimeString().slice(0, 5);
+          setDeadlineDate(dateStr);
+          setDeadlineTime(timeStr);
+          setSelectedHour(date.getHours());
+          setSelectedMinute(date.getMinutes());
+        });
       }
     }
   }, [form.deadline]);
@@ -224,8 +227,11 @@ function App() {
     if (deadlineTime) {
       const [hours, minutes] = deadlineTime.split(':').map(Number);
       if (!isNaN(hours) && !isNaN(minutes)) {
-        setSelectedHour(hours);
-        setSelectedMinute(minutes);
+        // Batch state updates to avoid cascading renders
+        startTransition(() => {
+          setSelectedHour(hours);
+          setSelectedMinute(minutes);
+        });
       }
     }
   }, [deadlineTime]);
